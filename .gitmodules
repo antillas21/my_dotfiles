@@ -1,0 +1,36 @@
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-coffeescript"]
+	path = vim/bundle/vim-coffeescript
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vim-pasta"]
+	path = vim/bundle/vim-pasta
+	url = git://github.com/sickill/vim-pasta.git
+[submodule "vim/bundle/vim-autoclose"]
+	path = vim/bundle/vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/vim-nerdtree"]
+	path = vim/bundle/vim-nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-addon-mw-utils"]
+	path = vim/bundle/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/vim-tlib"]
+	path = vim/bundle/vim-tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
