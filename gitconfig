@@ -1,0 +1,13 @@
+[core]
+	autocrlf = input
+  safecrlf = false
+	editor = vim
+[alias]
+  lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(cyan)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit --date=relative
+	hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(cyan)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+  co = checkout
+[color]
+	ui = true
+[branch]
+	autosetuprebase = always
