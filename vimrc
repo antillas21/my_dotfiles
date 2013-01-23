@@ -81,11 +81,11 @@ set statusline+=%<%P
 
 " Color scheme
 "set t_Co=256
-" set background=light
-" let g:solarized_termcolors=256
-" let g:solarized_contrast="high"
-" let g:solarized_visibility="high"
-colorscheme monokai
+set background=light
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 
 " Map ctrl-, to remove all trailing white space
 "map <C-p> :%s/\s\+$//<CR>
