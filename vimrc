@@ -15,8 +15,8 @@ set autoread
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file.
 " setting leader key to ,
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\\"
+let g:mapleader = "\\"
 
 " Show line number, cursor position.
 set ruler
@@ -159,6 +159,7 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
+nnoremap <C-Left> <F5> :CtrlPClearAllCaches<CR>
 let NERDTreeQuitOnOpen = 1 " Close nerdtree on file open"
 nnoremap <silent> <F7> :TlistToggle<CR>
 
@@ -167,6 +168,10 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y "*y
+
+" create new vsplit, and switch to it.
+noremap <leader>v <C-w>v
+
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
