@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-ctrlp"]
 	path = vim/bundle/vim-ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = git://github.com/leshill/vim-json.git
