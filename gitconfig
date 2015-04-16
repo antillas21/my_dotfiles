@@ -2,12 +2,23 @@
 	autocrlf = input
   safecrlf = false
 	editor = vim
+	excludesfile = /Users/aantillon/.gitignore_global
 [alias]
   lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(cyan)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit --date=relative
 	hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(cyan)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit --date=relative
   st = status
   co = checkout
+  dc = diff --cached
 [color]
 	ui = true
 [branch]
 	autosetuprebase = always
+[user]
+	name = Antonio Antillon
+	email = antillas21@gmail.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
