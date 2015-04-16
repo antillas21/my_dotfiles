@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/aantillon/Apps/SteveCarroll/savvytours'
+let g:netrw_dirhist_2='/Users/aantillon/Apps/SteveCarroll/previewfirst/website/trunk'
+let g:netrw_dirhist_3='/Users/aantillon/Apps/SteveCarroll/savvytours'
+let g:netrw_dirhist_4='/Users/aantillon/Apps/personal/mega_lotto'
+let g:netrw_dirhist_5='/Users/aantillon/Apps/BNB/ku-math/app/views/admin/links'
+let g:netrw_dirhist_6='/Users/aantillon/Apps/BNB/ku-math/app/views/layouts'
+let g:netrw_dirhist_7='/Users/aantillon/Apps/SteveCarroll/PF-rails4'
+let g:netrw_dirhist_8='/Users/aantillon/Apps/Sonata/loanhero-admin'
+let g:netrw_dirhist_9='/Users/aantillon/Apps/Sonata/loanheroapi'

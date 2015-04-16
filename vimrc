@@ -21,6 +21,7 @@ let g:mapleader = "\\"
 " Show line number, cursor position.
 set ruler
 set number
+set relativenumber
 
 " Ignore case when searching
 set ignorecase
@@ -51,12 +52,14 @@ set t_Co=256
 set guifont=Menlo\ 16
 
 " Color scheme
-"set t_Co=256
-set background=light
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
+" set t_Co=256
+" set background=light
+" let g:solarized_termcolors=256
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" colorscheme solarized
+" colorscheme Github
+colorscheme molokai
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TEXT, TABS AND INDENTS
@@ -89,6 +92,9 @@ set encoding=utf-8
 set nobackup
 set nowb
 set noswapfile
+
+" Let Ctrl-P ignore certain directories
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|cache\|/vendor'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,13 +159,13 @@ let g:molokai_original=1
 "configuring tabs
 set switchbuf=usetab
 nnoremap <F8> :sbnext<CR>
-nnoremap <S-F8> :sbprevious<CR>:w
+nnoremap <S-F8> :sbprevious<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
-nnoremap <C-Left> <F5> :CtrlPClearAllCaches<CR>
+nnoremap <silent> <F5> :CtrlPClearAllCaches<CR>
 let NERDTreeQuitOnOpen = 1 " Close nerdtree on file open"
 nnoremap <silent> <F7> :TlistToggle<CR>
 
@@ -171,6 +177,7 @@ map <leader>y "*y
 
 " create new vsplit, and switch to it.
 noremap <leader>v <C-w>v
+noremap <leader>h <C-w>h
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
@@ -178,34 +185,54 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
+" imap <c-l> <space>=><space>
+
+" Emmet trigger key
+let g:user_emmet_leader_key='<tab>'
+
+" Emmet should be available on html/css files only
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" Faster CtrlP
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEYBOARD CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable press-and-hold for keys in favor of key repeat
+" defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+" Set a blazingly fast keyboard repeat rate
+" defaults write NSGlobalDomain KeyRepeat -int 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenTestAlternate()
-  let new_file = AlternateForCurrentFile()
-  exec ':e ' . new_file
-endfunction
-function! AlternateForCurrentFile()
-  let current_file = expand("%")
-  let new_file = current_file
-  let in_spec = match(current_file, '^spec/') != -1
-  let going_to_spec = !in_spec
-  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1
-  if going_to_spec
-    if in_app
-      let new_file = substitute(new_file, '^app/', '', '')
-    end
-    let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
-    let new_file = 'spec/' . new_file
-  else
-    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
-    let new_file = substitute(new_file, '^spec/', '', '')
-    if in_app
-      let new_file = 'app/' . new_file
-    end
-  endif
-  return new_file
-endfunction
-nnoremap <leader>. :call OpenTestAlternate()<cr>
+" function! OpenTestAlternate()
+"   let new_file = AlternateForCurrentFile()
+"   exec ':e ' . new_file
+" endfunction
+" function! AlternateForCurrentFile()
+"   let current_file = expand("%")
+"   let new_file = current_file
+"   let in_spec = match(current_file, '^spec/') != -1
+"   let going_to_spec = !in_spec
+"   let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1
+"   if going_to_spec
+"     if in_app
+"       let new_file = substitute(new_file, '^app/', '', '')
+"     end
+"     let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
+"     let new_file = 'spec/' . new_file
+"   else
+"     let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
+"     let new_file = substitute(new_file, '^spec/', '', '')
+"     if in_app
+"       let new_file = 'app/' . new_file
+"     end
+"   endif
+"   return new_file
+" endfunction
+" nnoremap <leader>. :call OpenTestAlternate()<cr>
