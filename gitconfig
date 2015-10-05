@@ -11,8 +11,6 @@
   dc = diff --cached
 [color]
 	ui = true
-[branch]
-	autosetuprebase = always
 [user]
 	name = Antonio Antillon
 	email = antillas21@gmail.com
